@@ -1,1 +1,2 @@
-# eventsapp-nov30
+# eventsappstart
+This is a simple events app
