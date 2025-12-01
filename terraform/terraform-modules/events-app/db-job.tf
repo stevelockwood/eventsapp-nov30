@@ -5,6 +5,11 @@ resource "kubernetes_job" "db_initializer" {
   }
   spec {
     template {
+      metadata {
+        labels = {
+          app = "db-initializer"
+        }
+      }
       spec {
         container {
           name              = "db-init-job"
