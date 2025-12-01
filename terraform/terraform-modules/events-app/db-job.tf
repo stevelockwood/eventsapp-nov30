@@ -3,6 +3,8 @@ resource "kubernetes_job" "db_initializer" {
   metadata {
     name = "db-initializer"
   }
+  wait_for_rollout = false
+
   spec {
     template {
       metadata {
