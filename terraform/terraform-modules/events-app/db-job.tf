@@ -1,10 +1,9 @@
 resource "kubernetes_job" "db_initializer" {
   depends_on = [helm_release.database_server]
+
   metadata {
     name = "db-initializer"
   }
-  wait_for_rollout = false
-
   spec {
     template {
       metadata {
