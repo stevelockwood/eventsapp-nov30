@@ -1,7 +1,3 @@
-variable "project" {
-  type        = string
-  description = "Application Name"
-}
 
 variable "events_api_image" {
   description = "Container image for the Events API"
