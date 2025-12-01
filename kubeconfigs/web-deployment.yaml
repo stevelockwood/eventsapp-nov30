@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: events-web
-        image: your-docker-hub-id/events-website:v1.0
+        image: coursedemos/events-website-nov30:v1.0
         env: 
         - name: SERVER
           value: "http://events-api-service:8082"
