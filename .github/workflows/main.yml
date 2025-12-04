@@ -1,4 +1,38 @@
-#name: Deploy Events App
-#on:
-#  pull_request:
-#    branches: [main]
+name: Deploy Events App
+on:
+  pull_request:
+    branches: [main]
+
+env:
+  DOCKER_HUB_ID: coursedemos
+  EKS_CLUSTER_NAME: awsuser1-eks-cluster
+  AWS_REGION: us-east-2
+
+  
+jobs:
+  build:
+    name: Deployment
+    runs-on: ubuntu-latest
+    environment: production
+
+    # Use the Bash shell regardless whether ...
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{env.AWS_REGION}}
+
+
+
+
+
