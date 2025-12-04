@@ -1,0 +1,4 @@
+#name: Deploy Events App
+#on:
+#  pull_request:
+#    branches: [main]
