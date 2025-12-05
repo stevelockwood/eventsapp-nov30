@@ -4,6 +4,14 @@ resource "kubernetes_job" "db_initializer" {
   metadata {
     name = "db-initializer"
   }
+
+  wait_for_completion = false
+
+  timeouts {
+    create = "10m"
+    update = "10m"
+  }
+
   spec {
     template {
       metadata {

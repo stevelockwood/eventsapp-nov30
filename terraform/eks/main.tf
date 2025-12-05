@@ -5,6 +5,5 @@ module "kubernetes_app" {
   events_website_image = var.events-website-container
   events_db_init_image = var.events-db-init-container
 
-  # wait until cluster + aws-auth exist
   depends_on = [module.eks]
 }
