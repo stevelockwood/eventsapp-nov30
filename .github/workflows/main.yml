@@ -9,8 +9,7 @@ on:
 env:
   AWS_REGION: us-east-2
   EKS_CLUSTER_NAME: awsuser2-eks-cluster
-  ECR_REPOSITORY: 954837761799.dkr.ecr.us-east-2.amazonaws.com/user1/
-  IMAGE_NAME: events-website
+  ECR_REPOSITORY: user1/events-website
 
   
 jobs:
